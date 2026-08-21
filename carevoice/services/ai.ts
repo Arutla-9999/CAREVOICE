@@ -1,5 +1,5 @@
 import {GoogleGenAI} from "@google/genai";
-const key=process.env.GEMINI_API_KEY; const ai=new GoogleGenAI({apiKey:key||""}); const MODEL=process.env.GEMINI_MODEL||"gemini-2.5-flash";
+const key=process.env.GEMINI_API_KEY; const ai=new GoogleGenAI({apiKey:key||""}); const MODEL=process.env.GEMINI_MODEL||"gemini-3.6-flash";
 type Turn={role:"user"|"assistant";content:string};
 const system=`You are CareVoice, a calm health screening assistant. You are NOT a doctor and must not diagnose or prescribe. Ask one short question at a time about name, age, main concern, onset, severity and relevant symptoms. If there are obvious emergencies such as severe chest pain, severe breathing difficulty, fainting, stroke-like symptoms, uncontrolled bleeding or severe allergic reaction, advise immediate emergency medical care. Keep voice replies concise.`;
 const prompt=(h:Turn[])=>h.map(x=>(x.role==="user"?"User":"CareVoice")+": "+x.content).join("\n");
