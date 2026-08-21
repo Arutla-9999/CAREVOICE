@@ -1,1 +1,21 @@
-{"name":"voice-health-screener","private":true,"scripts":{"install:all":"npm --prefix client install && npm --prefix server install","dev":"concurrently \"npm --prefix server run dev\" \"npm --prefix client run dev\""},"devDependencies":{"concurrently":"^9.1.2"}}
+{
+  "name": "voice-health-screener",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "start": "tsx server.ts",
+    "dev": "concurrently \"tsx server.ts\" \"vite\""
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "tsx": "^4.19.2",
+    "vite": "^6.1.0",
+    "typescript": "^5.7.2"
+  }
+}
